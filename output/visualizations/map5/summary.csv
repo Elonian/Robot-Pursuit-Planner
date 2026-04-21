@@ -1,0 +1,6 @@
+planner,caught,time,moves,cost,wall_s,exit_code
+hybrid,1,150,150,2551,0.57,0
+multigoal,1,175,175,3115,0.271,0
+bfs,1,150,150,2551,0.127,0
+direct,1,150,150,5050,0.124,0
+greedy,0,181,90,6551,0.143,0

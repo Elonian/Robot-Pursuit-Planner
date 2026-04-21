@@ -1,0 +1,10 @@
+{
+  "caught": 1,
+  "time": 300,
+  "moves": 300,
+  "cost": 5100,
+  "planner": "direct",
+  "map": "map9.txt",
+  "exit_code": 0,
+  "wall_s": 0.451
+}

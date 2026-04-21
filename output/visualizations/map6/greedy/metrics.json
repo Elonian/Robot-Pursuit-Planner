@@ -1,0 +1,10 @@
+{
+  "caught": 1,
+  "time": 93,
+  "moves": 47,
+  "cost": 3780,
+  "planner": "greedy",
+  "map": "map6.txt",
+  "exit_code": 0,
+  "wall_s": 0.539
+}

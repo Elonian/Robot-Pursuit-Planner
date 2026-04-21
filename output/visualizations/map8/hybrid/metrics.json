@@ -1,0 +1,10 @@
+{
+  "caught": 1,
+  "time": 431,
+  "moves": 430,
+  "cost": 431,
+  "planner": "hybrid",
+  "map": "map8.txt",
+  "exit_code": 0,
+  "wall_s": 1.625
+}

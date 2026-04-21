@@ -1,0 +1,10 @@
+{
+  "caught": 1,
+  "time": 250,
+  "moves": 250,
+  "cost": 250,
+  "planner": "multigoal",
+  "map": "map7.txt",
+  "exit_code": 0,
+  "wall_s": 0.307
+}

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/mntdatalora/src/SpatioTemporal-Planning/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

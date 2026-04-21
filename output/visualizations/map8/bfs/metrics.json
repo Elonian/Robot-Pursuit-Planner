@@ -1,0 +1,10 @@
+{
+  "caught": 1,
+  "time": 451,
+  "moves": 410,
+  "cost": 451,
+  "planner": "bfs",
+  "map": "map8.txt",
+  "exit_code": 0,
+  "wall_s": 0.169
+}

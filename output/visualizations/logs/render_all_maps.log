@@ -1,0 +1,99 @@
+Running hybrid on map1.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/hybrid/animated_panel.gif
+Running multigoal on map1.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/multigoal/animated_panel.gif
+Running bfs on map1.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/bfs/animated_panel.gif
+Running direct on map1.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/direct/animated_panel.gif
+Running greedy on map1.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map1/summary.md
+Running hybrid on map2.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/hybrid/animated_panel.gif
+Running multigoal on map2.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/multigoal/animated_panel.gif
+Running bfs on map2.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/bfs/animated_panel.gif
+Running direct on map2.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/direct/animated_panel.gif
+Running greedy on map2.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map2/summary.md
+Running hybrid on map3.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/hybrid/animated_panel.gif
+Running multigoal on map3.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/multigoal/animated_panel.gif
+Running bfs on map3.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/bfs/animated_panel.gif
+Running direct on map3.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/direct/animated_panel.gif
+Running greedy on map3.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map3/summary.md
+Running hybrid on map4.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/hybrid/animated_panel.gif
+Running multigoal on map4.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/multigoal/animated_panel.gif
+Running bfs on map4.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/bfs/animated_panel.gif
+Running direct on map4.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/direct/animated_panel.gif
+Running greedy on map4.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map4/summary.md
+Running hybrid on map5.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/hybrid/animated_panel.gif
+Running multigoal on map5.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/multigoal/animated_panel.gif
+Running bfs on map5.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/bfs/animated_panel.gif
+Running direct on map5.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/direct/animated_panel.gif
+Running greedy on map5.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map5/summary.md
+Running hybrid on map6.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/hybrid/animated_panel.gif
+Running multigoal on map6.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/multigoal/animated_panel.gif
+Running bfs on map6.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/bfs/animated_panel.gif
+Running direct on map6.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/direct/animated_panel.gif
+Running greedy on map6.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map6/summary.md
+Running hybrid on map7.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/hybrid/animated_panel.gif
+Running multigoal on map7.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/multigoal/animated_panel.gif
+Running bfs on map7.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/bfs/animated_panel.gif
+Running direct on map7.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/direct/animated_panel.gif
+Running greedy on map7.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map7/summary.md
+Running hybrid on map8.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/hybrid/animated_panel.gif
+Running multigoal on map8.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/multigoal/animated_panel.gif
+Running bfs on map8.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/bfs/animated_panel.gif
+Running direct on map8.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/direct/animated_panel.gif
+Running greedy on map8.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map8/summary.md
+Running hybrid on map9.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/hybrid/animated_panel.gif
+Running multigoal on map9.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/multigoal/animated_panel.gif
+Running bfs on map9.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/bfs/animated_panel.gif
+Running direct on map9.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/direct/animated_panel.gif
+Running greedy on map9.txt
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/greedy/animated_panel.gif
+Wrote /mntdatalora/src/SpatioTemporal-Planning/output/visualizations/map9/summary.md

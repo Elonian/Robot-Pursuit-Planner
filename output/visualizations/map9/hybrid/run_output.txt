@@ -1,0 +1,14 @@
+Reading problem definition from: /mntdatalora/src/SpatioTemporal-Planning/maps/map9.txt
+map size: 400,400
+collision threshold: 50
+robot pose: 50,200
+target_steps: 602
+
+Running planner
+Writing robot trajectory to: /mntdatalora/src/SpatioTemporal-Planning/output/robot_trajectory.txt
+
+RESULT
+target caught = 1
+time taken (s) = 368
+moves made = 367
+path cost = 368
