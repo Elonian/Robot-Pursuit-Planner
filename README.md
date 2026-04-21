@@ -1,20 +1,20 @@
-# SpatioTemporal Planning
+# Robot Pursuit Planning
 
 Author: Varun Moparthi
 
 ## Abstract
 
-This project solves a moving-target interception problem on weighted 2D grid
-maps. A robot starts at a known cell, a target follows a known time-indexed
-trajectory, and the planner must command one 8-connected grid action at each
+This project solves a moving target interception problem on weighted 2D grid
+maps. A robot starts at a known cell, a target follows a known time indexed
+trajectory, and the planner must command one 8 connected grid action at each
 control step until the robot occupies the same cell as the target. The map
 contains nonuniform traversal costs and blocked cells, so a good solution must
 reason about both time and space: catching the target early is not always the
 same as catching it cheaply.
 
-The project compares several graph-search views of the same interception task:
-direct pursuit, spatial reachability, weighted search, explicit space-time
-search, and a final hybrid strategy that selects a validated low-cost catch
+The project compares several graph search views of the same interception task:
+direct pursuit, spatial reachability, weighted search, explicit space time
+search, and a final hybrid strategy that selects a validated low cost catch
 trajectory. The outputs emphasize both behavior and evaluation, with animated
 map panels, final trajectory panels, and tables showing catch success, time,
 motion count, and weighted path cost.
@@ -126,43 +126,39 @@ a target trajectory. The harness uses 1-indexed grid coordinates. A grid
 coordinate maps into the 1D map array as:
 
 $$
-\operatorname{idx}(x,y) = (y-1)x_{\mathrm{size}} + (x-1).
+idx(x,y) = (y-1)x_{size} + (x-1).
 $$
 
 The free-space set is:
 
 $$
-\mathcal{V}_{\mathrm{free}}
-= \left\{(x,y)\;\middle|\;
-1 \le x \le x_{\mathrm{size}},\;
-1 \le y \le y_{\mathrm{size}},\;
-0 \le c(x,y) < c_{\mathrm{obs}}
-\right\}.
+\mathcal{V}_{free}
+= \{(x,y): 1 \le x \le x_{size},\; 1 \le y \le y_{size},\; 0 \le c(x,y) < c_{obs}\}.
 $$
 
 The robot action set is the 8-connected grid neighborhood plus wait:
 
 $$
 \mathcal{U}
-= \{(u_x,u_y) \mid u_x,u_y \in \{-1,0,1\}\}.
+= \{(u_x,u_y): u_x,u_y \in \{-1,0,1\}\}.
 $$
 
 The robot state and one-step action are represented by:
 
 $$
-p_t=(x_t,y_t),\qquad u_t\in\mathcal{U}.
+p_t=(x_t,y_t),\quad u_t\in\mathcal{U}.
 $$
 
 The transition model is:
 
 $$
-p_{t+1}=p_t+u_t,\qquad p_{t+1}\in\mathcal{V}_{\mathrm{free}}.
+p_{t+1}=p_t+u_t,\quad p_{t+1}\in\mathcal{V}_{free}.
 $$
 
 The target position at time $t$ is:
 
 $$
-q_t = \operatorname{targetAt}(t).
+q_t = targetAt(t).
 $$
 
 The target is caught when:
@@ -175,7 +171,7 @@ Because diagonal moves are allowed, the basic lower bound on travel time is
 Chebyshev distance:
 
 $$
-d_\infty(a,b) = \max\{|a_x-b_x|,\;|a_y-b_y|\}.
+d_\infty(a,b) = M,\quad M \ge |a_x-b_x|,\quad M \ge |a_y-b_y|.
 $$
 
 For a candidate future intercept time, reachability must satisfy:
@@ -290,7 +286,7 @@ The portfolio is:
 
 $$
 \mathcal{P}
-= \{P_{\mathrm{direct}},P_{\mathrm{multi}},P_{\mathrm{spatial}},P_{\mathrm{bfs}}\}.
+= \{P_{direct},P_{multi},P_{spatial},P_{bfs}\}.
 $$
 
 A candidate route is accepted only when it catches the target at its own final
@@ -303,8 +299,7 @@ $$
 The selected route is the minimum-cost valid member of that set:
 
 $$
-P^\star
-= \arg\min_{P \in \mathcal{P}\;:\;\mathrm{valid}(P)} J(P).
+P^* \in \mathcal{P}_{valid},\quad J(P^*) \le J(P)\;\; \forall P\in\mathcal{P}_{valid}.
 $$
 
 If no portfolio candidate catches the target, the planner tries explicit
@@ -334,28 +329,20 @@ than at least one time when the target occupies that cell.
 For a candidate cell, define the target visit times:
 
 $$
-\mathcal{T}(v)=\{t \mid q_t=v\}.
+\mathcal{T}(v)=\{t: q_t=v\}.
 $$
 
 The reachable future goal set is:
 
 $$
 \mathcal{G}
-= \left\{v\;\middle|\;
-\exists t \in \mathcal{T}(v),\;
-d_\infty(p_\tau,v) \le t-\tau,\;
-v \in \mathcal{V}_{\mathrm{free}}
-\right\}.
+= \{v: \exists t \in \mathcal{T}(v),\; d_\infty(p_\tau,v) \le t-\tau,\; v \in \mathcal{V}_{free}\}.
 $$
 
-For an expanded cell, the earliest compatible intercept time is:
+The compatible intercept time must satisfy the arrival constraint:
 
 $$
-t_I(v)
-= \min\left\{t \in \mathcal{T}(v)
-\;\middle|\;
-t \ge \tau+d_P(v)
-\right\},
+t_I(v)\in\mathcal{T}(v),\quad t_I(v)\ge \tau+d_P(v).
 $$
 
 where $d_P(v)$ is the number of steps in the recovered path to $v$. The final
@@ -363,7 +350,7 @@ candidate score includes both travel and waiting:
 
 $$
 J(v)
-= g(v) + \bigl(t_I(v)-\tau-d_P(v)\bigr)c(v).
+= g(v) + (t_I(v)-\tau-d_P(v))c(v).
 $$
 
 The heuristic blends distance to the target trajectory's bounding box with
@@ -371,8 +358,7 @@ distance to sampled target cells:
 
 $$
 h(v)
-= c_{\min}\left(0.35\,d_{\mathrm{box}}(v)
-+0.65\,d_{\mathrm{sample}}(v)\right).
+= c_{min}(0.35\,d_{box}(v)+0.65\,d_{sample}(v)).
 $$
 
 ![Multi-goal A* final maps 1-4](output/visualizations/readme_panels/multigoal_maps1_4_final_panel.png)
@@ -396,17 +382,18 @@ therefore a reachability planner: it finds the minimum number of 8-connected
 moves to each cell, then checks whether the target reaches that cell at or
 after the robot can arrive.
 
-The BFS distance from start cell $s$ to cell $v$ is:
+The BFS distance is the number of grid moves in the shortest 8-connected path
+from the start cell to a candidate intercept cell:
 
 $$
-d_G(s,v)=\min_{P:s\to v} |P|-1.
+d_G(s,v)=L^*(s,v).
 $$
 
 A cell is a valid interception site when:
 
 $$
 \exists t \in \mathcal{T}(v)
-\quad \mathrm{s.t.}\quad
+\quad
 t \ge \tau+d_G(s,v).
 $$
 
@@ -443,18 +430,13 @@ target cell:
 
 $$
 p_{k+1}
-= p_k+
-\begin{bmatrix}
-\operatorname{sgn}(q_{t,x}-p_{k,x})\\
-\operatorname{sgn}(q_{t,y}-p_{k,y})
-\end{bmatrix}.
+= p_k+(sgn(q_{t,x}-p_{k,x}),\;sgn(q_{t,y}-p_{k,y})).
 $$
 
 The candidate is rejected if any intermediate cell is blocked:
 
 $$
-p_k \in \mathcal{V}_{\mathrm{free}}
-\qquad \forall k\in[\tau,t].
+p_k \in \mathcal{V}_{free}\quad \forall k\in[\tau,t].
 $$
 
 This planner is intentionally simple. It is useful for identifying cases where
@@ -488,8 +470,7 @@ $$
 The selected next pose is:
 
 $$
-p_{\tau+1}
-= \arg\min_{v \in \mathcal{N}_8(p_\tau)\cap\mathcal{V}_{\mathrm{free}}} S(v).
+p_{\tau+1}=v^*,\quad S(v^*) \le S(v)\;\; \forall v\in\mathcal{N}_8(p_\tau)\cap\mathcal{V}_{free}.
 $$
 
 This planner is fast and locally safe, but it does not reason about future
@@ -525,8 +506,7 @@ $$
 Its weighted A* priority is:
 
 $$
-f(v,t)=g(v,t)+w\,h(v,t),
-\qquad w=2.2.
+f(v,t)=g(v,t)+w\,h(v,t),\quad w=2.2.
 $$
 
 The moving-target heuristic samples future target positions and penalizes
@@ -534,11 +514,12 @@ states that cannot physically intercept within the sampled time offset:
 
 $$
 h(v,t)
-= c_{\min}\min_{\Delta\in\mathcal{D}_t}
-\left[
-d_\infty(v,q_{t+\Delta})
-+4\max\left(0,d_\infty(v,q_{t+\Delta})-\Delta\right)
-\right].
+= c_{min}\;best_{\Delta\in\mathcal{D}_t}
+\{d_\infty(v,q_{t+\Delta})+4\,e(v,t,\Delta)\}.
+$$
+
+$$
+e(v,t,\Delta) \ge 0,\quad e(v,t,\Delta) \ge d_\infty(v,q_{t+\Delta})-\Delta.
 $$
 
 `SpatialInterceptAStar` first selects feasible candidate intercepts and then
@@ -546,17 +527,14 @@ plans to those cells in the spatial graph:
 
 $$
 \mathcal{C}
-= \left\{(q_t,t)\;\middle|\;
-d_\infty(p_\tau,q_t)\le t-\tau,\;
-q_t\in\mathcal{V}_{\mathrm{free}}
-\right\}.
+= \{(q_t,t): d_\infty(p_\tau,q_t)\le t-\tau,\; q_t\in\mathcal{V}_{free}\}.
 $$
 
 For each candidate, travel and waiting are scored together:
 
 $$
-J(q_t,t)=J_{\mathrm{travel}}(q_t)
-+\bigl(t-\tau-d_P(q_t)\bigr)c(q_t).
+J(q_t,t)=J_{travel}(q_t)
++(t-\tau-d_P(q_t))c(q_t).
 $$
 
 ## Evaluation
